@@ -16,7 +16,23 @@ function Promise(excutor){
         }
 
         setTimeout(() => {
+            if (that.status == PENDING) {
+                that.status = FULFLLED;
+                that.value = value;
+                that.onRejectedCallbacks.forEach(Element => Element(that.value));
+            }
+        });
+    }
+
+    function reject(reason){
+        setTimeout(() => {
             
         })
     }
+
+
+
+
+
+
 }

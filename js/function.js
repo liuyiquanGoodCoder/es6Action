@@ -35,11 +35,29 @@
 // 	function foo(){console.log('b')}
 // }
 
-var x = 1;
-test()
+// var x = 1;
+// test()
 
-function test(){
-	console.log(x)
-	var x = '-------------'
-	console.log(x)
+// function test(){
+// 	console.log(x)
+// 	var x = '-------------'
+// 	console.log(x)
+// }
+
+function foo() {
+	setTimeout(() => {
+	  console.log('id:', this.id);
+	}, 100);
 }
+
+
+	setTimeout(function(){
+	  console.log('id:', this.id);
+	}, 100);
+
+  
+	var id = 21;
+  
+foo.call({ id: 42 });
+
+console.log(this.id);
